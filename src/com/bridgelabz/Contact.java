@@ -4,7 +4,7 @@ public class Contact {
     private String lastName;
     private String address;
     private String city;
-    private int zip;
+    private String zip;
     private String state;
     private String phoneNo;
     private String email;
@@ -14,7 +14,7 @@ public class Contact {
         // TODO Auto-generated constructor stub
     }
 
-    public Contact(String firstName, String lastName, String address, String city, int zip, String state, String phoneNo,
+    public Contact(String firstName, String lastName, String address, String city, String zip, String state, String phoneNo,
                    String email) {
         this.firstName = firstName;
         this.lastName = lastName;
