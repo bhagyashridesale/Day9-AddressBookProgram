@@ -1,46 +1,10 @@
 package com.bridgelabz;
-import java.util.ArrayList;
-import java.util.Scanner;
 public class AddressBookMain {
-    static Scanner scanner = new Scanner(System.in);
-    ArrayList<Contact> personInformation = new ArrayList<Contact>();
-
-    // add new person record to array list after taking input
-
-    public void addPersonContact() {
-        System.out.println("Enter the First Name");
-        String fName = scanner.next();
-        System.out.println("Enter the Last Name");
-        String lName = scanner.next();
-        System.out.println("Enter the Address");
-        String address = scanner.next();
-        System.out.println("Enter the City");
-        String city = scanner.next();
-        System.out.println("Enter the State");
-        String state = scanner.next();
-        System.out.println("Enter the Zip");
-        String zip = scanner.next();
-        System.out.println("Enter the PhoneNumber");
-        String phoneNumber = scanner.next();
-        System.out.println("Enter the Email");
-        String email = scanner.next();
-        // creating constructor
-        Contact contacts = new Contact(fName, lName, address, city, state, zip, phoneNumber, email);
-
-        // add the above list to Contacts array list
-        personInformation.add(contacts);
-
-        // printing contacts object data inside
-        System.out.println(contacts);
-
-    }// end of add person method
     public static void main(String[] args) {
-        System.out.println("Welcome to address book program in AddressBookMain class");
-        AddressBookMain addressBookMain = new AddressBookMain();
-        addressBookMain.addPersonContact();
 
-    }// end of main
-
-}/// end of class
-
+    System.out.println("Welcome to addressBook java Program");
+    Contact contact = new Contact();
+		System.out.println( contact );
+    }
+}
 
