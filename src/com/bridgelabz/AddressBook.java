@@ -3,42 +3,42 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class AddressBook {
-    public void addNewContact(){
-        ArrayList<Contact> array = new ArrayList<>();
+    public void addNewContact() {
+        ArrayList<Contact> array = new ArrayList<Contact>();
         Scanner sc = new Scanner(System.in);
         int choice;
         do {
             System.out.println("1.Adding New Contact");
             System.out.println("2.Check Added Contact");
             System.out.println("3.Edit Added Contact");
+            System.out.println("4.Delete Added Contact");
 
             System.out.println("Enter your choice");
             choice = sc.nextInt();
 
-            Scanner input=new Scanner(System.in);
+            Scanner input = new Scanner(System.in);
             switch (choice) {
                 case 1:
 
                     System.out.println("Enter the details of contact person");
                     System.out.print("Enter first name:");
-                    String firstName=input.nextLine();
+                    String firstName = input.nextLine();
                     System.out.print("Enter last name:");
-                    String lastName=input.nextLine();
+                    String lastName = input.nextLine();
                     System.out.print("Enter address:");
-                    String address=input.nextLine();
+                    String address = input.nextLine();
                     System.out.print("Enter city:");
-                    String city=input.nextLine();
+                    String city = input.nextLine();
                     System.out.print("Enter state:");
-                    String state=input.nextLine();
+                    String state = input.nextLine();
                     System.out.print("Enter zipcode:");
-                    String zipCode=input.nextLine();
+                    String zipCode = input.nextLine();
                     System.out.print("Enter phone number:");
-                    String phoneNo=input.nextLine();
+                    String phoneNo = input.nextLine();
                     System.out.print("Enter email:");
-                    String email=input.nextLine();
+                    String email = input.nextLine();
 
-                    Contact contact = new Contact(firstName, lastName, address, city, zipCode, state, phoneNo,
-                            email);
+                    Contact contact = new Contact(firstName, lastName, address, city, zipCode, state, phoneNo, email);
                     array.add(contact);
                     break;
                 case 2:
@@ -47,7 +47,7 @@ public class AddressBook {
                 case 3:
                     System.out.println("Enter first name of the person for update : ");
                     String firstName1 = input.nextLine();
-                    for (Contact eachContact:array) {
+                    for (Contact eachContact : array) {
                         if (eachContact.getFirstName().equals(firstName1)) {
                             System.out.print("Enter updated name:");
                             eachContact.setFirstName(input.nextLine());
@@ -67,13 +67,24 @@ public class AddressBook {
                             eachContact.setEmail(input.nextLine());
                             System.out.println();
                             System.out.println("Edit completed");
-                        }
-                        else {
+                        } else {
                             System.out.println("First name not found.");
                         }
                     }
-            }
+                case 4:
+                    System.out.println("Enter first name of the person for delete :");
+                    firstName1 = input.next();
+                    for (Contact eachContact : array) {
+                        if (eachContact.getFirstName().equals(firstName1)) {
+                            array.remove(eachContact);
+                            System.out.println("Contact deleted");
+                            break;
+                        } else {
+                            System.out.println("Contact not found with this name");
+                        }
+                    }
 
-        }while(choice == 1 || choice == 2 || choice == 3);
+            }
+        } while (choice == 1 || choice == 2 || choice == 3 || choice == 4);
     }
 }
